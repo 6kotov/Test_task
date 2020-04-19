@@ -13,7 +13,9 @@ function CommentItem({ item }) {
     </div>
   );
 }
+
 CommentItem.propTypes = {
   item: PropTypes.object.isRequired,
 };
+
 export default CommentItem;

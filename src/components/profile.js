@@ -7,11 +7,13 @@ function Profile({ profile }) {
     const width = window.innerWidth;
     getDescription(profile.description, width);
   };
+
   const [text, setText] = useState(profile.description);
 
   function getDescription(text, width) {
     return width > 500 ? setText(text) : setText(text.slice(0, 40) + "...");
   }
+
   return (
     <div className="profileContainer">
       <div className="profileHead">

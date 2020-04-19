@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../index.less";
 import PropTypes from "prop-types";
+
 function AddComment({ addComment }) {
   const [commentText, setCommentText] = useState("");
 
@@ -24,6 +25,7 @@ function AddComment({ addComment }) {
       onSubmit(event);
     }
   }
+
   return (
     <form className="commentForm" onSubmit={onSubmit} onKeyUp={keydownHandler}>
       <textarea

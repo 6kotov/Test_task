@@ -28,7 +28,9 @@ function Comments({ commentsList }) {
     </div>
   );
 }
+
 Comments.propTypes = {
   commentsList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
 export default Comments;
