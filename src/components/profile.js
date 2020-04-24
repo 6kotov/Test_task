@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../index.less";
 import PropTypes from "prop-types";
 
 function Profile({ profile }) {
-  window.onresize = () => {
-    const width = window.innerWidth;
-    getDescription(profile.description, width);
-  };
-
-  const [text, setText] = useState(profile.description);
-
-  function getDescription(text, width) {
-    return width > 500 ? setText(text) : setText(text.slice(0, 40) + "...");
-  }
-
   return (
     <div className="profileContainer">
       <div className="profileHead">
@@ -23,7 +12,7 @@ function Profile({ profile }) {
           {" "}
           <div className="profilename">{profile.name}</div>
           <div className="position">{profile.position}</div>
-          <div className="profileDescription">{text}</div>
+          <div className="profileDescription">{profile.description}</div>
         </div>
       </div>
       <div className="statisticsContainer">
@@ -31,17 +20,24 @@ function Profile({ profile }) {
         <div className="statisticsTable">
           <div className="services">Услуг</div>
           <div className="statistics">
-            <div className="tr">
-              <div className="booking">Ручное бронирование</div>
-              <div>{profile.booking}</div>
-            </div>
-            <div className="tr">
-              <div className="tours"> Пакетные туры</div>
-              <div>{profile.tours}</div>
-            </div>
-            <div className="tr">
-              <div className="hotels"> Отели</div>
-              <div>{profile.hotels}</div>
+            <div className="startLine">
+              <div className="tr">
+                <div className="booking"></div>
+                <div className="textOverflow">
+                  Ручное бронирование + доставка
+                </div>
+                <div>{profile.booking}</div>
+              </div>
+              <div className="tr">
+                <div className="tours"> </div>
+                <div className="textOverflow">Пакетные туры</div>
+                <div>{profile.tours}</div>
+              </div>
+              <div className="tr">
+                <div className="hotels"> </div>
+                <div className="textOverflow"> Отели</div>
+                <div>{profile.hotels}</div>
+              </div>
             </div>
           </div>
           <div className="total">

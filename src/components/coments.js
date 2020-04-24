@@ -13,12 +13,12 @@ function Comments({ commentsList }) {
           <div className="allComments">Все отзывы</div>
         </div>
         <div className="commentsRate">
-          <div>
+          <div className="rate">
             {" "}
-            <MdFavorite color="#73b4d5" /> 131
+            <MdFavorite className="icon" color="#73b4d5" /> 131
           </div>
-          <div>
-            <MdModeComment color="#73b4d5" /> 14
+          <div className="rate">
+            <MdModeComment className="icon" color="#73b4d5" /> 14
           </div>
         </div>
       </div>
